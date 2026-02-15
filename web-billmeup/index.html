@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BillMeUp | Restaurant Billing App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <div class="bg-grid"></div>
+
+  <main class="app-shell">
+    <header class="hero card reveal">
+      <div>
+        <h1 id="restaurantBrand">Spice Garden Bistro</h1>
+        <p class="sub">Premium Family Restaurant | BillMeUp POS</p>
+        <p class="meta-line" id="restaurantMeta">
+          24 MG Road, Indore | +91 98765 43210 | GSTIN: 23ABCDE1234F1Z5
+        </p>
+      </div>
+      <div class="hero-meta">
+        <label>
+          Customer Name
+          <input id="customerName" type="text" placeholder="Walk-in Customer" />
+        </label>
+        <label>
+          Mobile
+          <input id="mobileNumber" type="text" placeholder="+91" />
+        </label>
+        <label>
+          Order Type
+          <select id="orderType">
+            <option value="Dine In">Dine In</option>
+            <option value="Takeaway">Takeaway</option>
+          </select>
+        </label>
+        <label>
+          Table No
+          <input id="tableNo" type="text" placeholder="T12" />
+        </label>
+        <label>
+          Served By
+          <input id="serverName" type="text" placeholder="Aman" />
+        </label>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <article class="card panel reveal delay-1">
+        <div class="panel-head">
+          <h2>Menu</h2>
+          <div class="chip-row" id="categoryFilters"></div>
+        </div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </article>
+
+      <article class="card panel reveal delay-2">
+        <div class="panel-head">
+          <h2>Current Bill</h2>
+          <button id="clearCartBtn" class="btn ghost">Clear</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cartBody"></tbody>
+          </table>
+        </div>
+
+        <div class="billing-box">
+          <label class="toggle">
+            <input type="checkbox" id="serviceChargeToggle" />
+            <span>Add 10% Service Charge</span>
+          </label>
+
+          <div class="totals">
+            <p><span>Subtotal</span><strong id="subtotalValue">0.00</strong></p>
+            <p><span>GST (5%)</span><strong id="gstValue">0.00</strong></p>
+            <p><span>Service</span><strong id="serviceValue">0.00</strong></p>
+            <p class="grand"><span>Grand Total</span><strong id="grandTotalValue">0.00</strong></p>
+          </div>
+
+          <div class="pay-grid">
+            <label>Cash <input id="cashInput" type="number" min="0" step="0.01" value="0" /></label>
+            <label>UPI <input id="upiInput" type="number" min="0" step="0.01" value="0" /></label>
+            <label>Card <input id="cardInput" type="number" min="0" step="0.01" value="0" /></label>
+          </div>
+
+          <div class="due-block">
+            <p>Total Paid: <strong id="paidValue">0.00</strong></p>
+            <p>Due(-)/Change(+): <strong id="dueValue">0.00</strong></p>
+          </div>
+
+          <div class="actions">
+            <button id="generateBillBtn" class="btn primary">Generate Invoice</button>
+          </div>
+        </div>
+
+        <div class="history-box">
+          <div class="panel-head">
+            <h3>Sales History</h3>
+            <button id="clearHistoryBtn" class="btn ghost">Clear History</button>
+          </div>
+          <div id="salesHistory" class="sales-history"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="invoiceDialog" class="invoice-dialog">
+    <div class="invoice-head">
+      <h3>Invoice Preview</h3>
+      <div class="invoice-actions">
+        <button id="downloadPdfBtn" class="btn">Download PDF</button>
+        <button id="printBtn" class="btn">Print</button>
+        <button id="closeDialogBtn" class="btn ghost">Close</button>
+      </div>
+    </div>
+    <pre id="invoiceText"></pre>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
