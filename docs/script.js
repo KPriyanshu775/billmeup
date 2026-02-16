@@ -17,42 +17,22 @@ const RESTAURANT = {
 
 const FALLBACK_IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/640px-No_image_available.svg.png";
 
-function foodImage(title, c1, c2) {
-  const svg = `
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 560'>
-    <defs>
-      <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-        <stop offset='0%' stop-color='${c1}'/>
-        <stop offset='100%' stop-color='${c2}'/>
-      </linearGradient>
-    </defs>
-    <rect width='900' height='560' fill='url(#g)'/>
-    <circle cx='760' cy='120' r='120' fill='rgba(255,255,255,0.16)'/>
-    <circle cx='140' cy='470' r='110' fill='rgba(255,255,255,0.1)'/>
-    <rect x='40' y='56' width='250' height='52' rx='10' fill='rgba(0,0,0,0.2)'/>
-    <text x='58' y='92' font-size='30' font-family='Arial, sans-serif' font-weight='700' fill='white'>BillMeUp Dish</text>
-    <rect x='40' y='360' width='820' height='130' rx='16' fill='rgba(0,0,0,0.2)'/>
-    <text x='70' y='440' font-size='64' font-family='Arial, sans-serif' font-weight='700' fill='white'>${title}</text>
-  </svg>`;
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-}
-
 const MENU_ITEMS = [
-  { id: 101, name: "Margherita Pizza", category: "Main Course", price: 249, image: foodImage("Margherita Pizza", "#f39c12", "#e74c3c") },
-  { id: 102, name: "Veg Burger", category: "Main Course", price: 149, image: foodImage("Veg Burger", "#f1c40f", "#d35400") },
-  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: foodImage("Paneer Tikka", "#ff9966", "#ff5e62") },
-  { id: 104, name: "French Fries", category: "Starters", price: 119, image: foodImage("French Fries", "#f6d365", "#fda085") },
-  { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: foodImage("Cold Coffee", "#7f8c8d", "#2c3e50") },
-  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: foodImage("Masala Chai", "#d1913c", "#ffd194") },
-  { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: foodImage("Chocolate Brownie", "#4e342e", "#6d4c41") },
-  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Gulab%20Jamun.jpg" },
-  { id: 109, name: "Mint Mojito", category: "Beverages", price: 129, image: foodImage("Mint Mojito", "#11998e", "#38ef7d") },
-  { id: 110, name: "Veg Momos", category: "Starters", price: 139, image: foodImage("Veg Momos", "#f7971e", "#ffd200") },
-  { id: 111, name: "Chicken Biryani", category: "Main Course", price: 289, image: foodImage("Chicken Biryani", "#f2994a", "#f2c94c") },
-  { id: 112, name: "Tandoori Roti", category: "Main Course", price: 25, image: foodImage("Tandoori Roti", "#d38312", "#a83279") },
-  { id: 113, name: "Masala Papad", category: "Starters", price: 69, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Onion%20Masala%20Papad.jpg" },
-  { id: 114, name: "Mango Lassi", category: "Beverages", price: 119, image: foodImage("Mango Lassi", "#f9d423", "#ff4e50") },
-  { id: 115, name: "Ice Cream Sundae", category: "Desserts", price: 149, image: foodImage("Ice Cream Sundae", "#56ccf2", "#2f80ed") }
+  { id: 101, name: "Margherita Pizza", category: "Main Course", price: 249, image: "./assets/images/margherita-pizza.svg" },
+  { id: 102, name: "Veg Burger", category: "Main Course", price: 149, image: "./assets/images/veg-burger.svg" },
+  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: "./assets/images/paneer-tikka.svg" },
+  { id: 104, name: "French Fries", category: "Starters", price: 119, image: "./assets/images/french-fries.svg" },
+  { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: "./assets/images/cold-coffee.svg" },
+  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: "./assets/images/masala-chai.svg" },
+  { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: "./assets/images/chocolate-brownie.svg" },
+  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "./assets/images/gulab-jamun.svg" },
+  { id: 109, name: "Mint Mojito", category: "Beverages", price: 129, image: "./assets/images/mint-mojito.svg" },
+  { id: 110, name: "Veg Momos", category: "Starters", price: 139, image: "./assets/images/veg-momos.svg" },
+  { id: 111, name: "Chicken Biryani", category: "Main Course", price: 289, image: "./assets/images/chicken-biryani.svg" },
+  { id: 112, name: "Tandoori Roti", category: "Main Course", price: 25, image: "./assets/images/tandoori-roti.svg" },
+  { id: 113, name: "Masala Papad", category: "Starters", price: 69, image: "./assets/images/masala-papad.svg" },
+  { id: 114, name: "Mango Lassi", category: "Beverages", price: 119, image: "./assets/images/mango-lassi.svg" },
+  { id: 115, name: "Ice Cream Sundae", category: "Desserts", price: 149, image: "./assets/images/ice-cream-sundae.svg" }
 ];
 
 const cart = new Map();
