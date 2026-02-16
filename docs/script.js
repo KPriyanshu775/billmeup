@@ -45,12 +45,12 @@ const MENU_ITEMS = [
   { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: foodImage("Cold Coffee", "#7f8c8d", "#2c3e50") },
   { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: foodImage("Masala Chai", "#d1913c", "#ffd194") },
   { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: foodImage("Chocolate Brownie", "#4e342e", "#6d4c41") },
-  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: foodImage("Gulab Jamun", "#8e2de2", "#4a00e0") },
+  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Gulab%20Jamun.jpg" },
   { id: 109, name: "Mint Mojito", category: "Beverages", price: 129, image: foodImage("Mint Mojito", "#11998e", "#38ef7d") },
   { id: 110, name: "Veg Momos", category: "Starters", price: 139, image: foodImage("Veg Momos", "#f7971e", "#ffd200") },
   { id: 111, name: "Chicken Biryani", category: "Main Course", price: 289, image: foodImage("Chicken Biryani", "#f2994a", "#f2c94c") },
   { id: 112, name: "Tandoori Roti", category: "Main Course", price: 25, image: foodImage("Tandoori Roti", "#d38312", "#a83279") },
-  { id: 113, name: "Masala Papad", category: "Starters", price: 69, image: foodImage("Masala Papad", "#f6b93b", "#e55039") },
+  { id: 113, name: "Masala Papad", category: "Starters", price: 69, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Onion%20Masala%20Papad.jpg" },
   { id: 114, name: "Mango Lassi", category: "Beverages", price: 119, image: foodImage("Mango Lassi", "#f9d423", "#ff4e50") },
   { id: 115, name: "Ice Cream Sundae", category: "Desserts", price: 149, image: foodImage("Ice Cream Sundae", "#56ccf2", "#2f80ed") }
 ];
