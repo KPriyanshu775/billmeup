@@ -20,12 +20,19 @@ const FALLBACK_IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a
 const MENU_ITEMS = [
   { id: 101, name: "Margherita Pizza", category: "Main Course", price: 249, image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80" },
   { id: 102, name: "Veg Burger", category: "Main Course", price: 149, image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" },
-  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=900&q=80" },
+  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=900&q=80" },
   { id: 104, name: "French Fries", category: "Starters", price: 119, image: "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=900&q=80" },
   { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" },
-  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: "https://images.unsplash.com/photo-1594631661960-61949463b356?auto=format&fit=crop&w=900&q=80" },
+  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=900&q=80" },
   { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80" },
-  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "https://images.unsplash.com/photo-1631452180539-96aca7d48617?auto=format&fit=crop&w=900&q=80" }
+  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80" },
+  { id: 109, name: "Mint Mojito", category: "Beverages", price: 129, image: "https://images.unsplash.com/photo-1551024709-8f23befc6cf7?auto=format&fit=crop&w=900&q=80" },
+  { id: 110, name: "Veg Momos", category: "Starters", price: 139, image: "https://images.unsplash.com/photo-1626500155537-93690e1c8f8f?auto=format&fit=crop&w=900&q=80" },
+  { id: 111, name: "Chicken Biryani", category: "Main Course", price: 289, image: "https://images.unsplash.com/photo-1631515242808-497c3fbd3970?auto=format&fit=crop&w=900&q=80" },
+  { id: 112, name: "Tandoori Roti", category: "Main Course", price: 25, image: "https://images.unsplash.com/photo-1601050690117-8b47f4b6cb1d?auto=format&fit=crop&w=900&q=80" },
+  { id: 113, name: "Masala Papad", category: "Starters", price: 69, image: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=900&q=80" },
+  { id: 114, name: "Mango Lassi", category: "Beverages", price: 119, image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80" },
+  { id: 115, name: "Ice Cream Sundae", category: "Desserts", price: 149, image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80" }
 ];
 
 const cart = new Map();
