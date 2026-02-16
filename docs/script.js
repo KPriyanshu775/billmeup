@@ -18,14 +18,14 @@ const RESTAURANT = {
 const FALLBACK_IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/640px-No_image_available.svg.png";
 
 const MENU_ITEMS = [
-  { id: 101, name: "Margherita Pizza", category: "Main Course", price: 249, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Margherita_pizza_55.jpg" },
-  { id: 102, name: "Veg Burger", category: "Main Course", price: 149, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Veg._Burger.JPG" },
-  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Paneer_tikka.jpg" },
-  { id: 104, name: "French Fries", category: "Starters", price: 119, image: "https://commons.wikimedia.org/wiki/Special:FilePath/French_Fries.jpg" },
-  { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Iced_coffee.jpg" },
-  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Masala_chai.jpg" },
-  { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chocolate_Brownie.jpg" },
-  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "https://commons.wikimedia.org/wiki/Special:FilePath/Gulab_Jamuns.jpg" }
+  { id: 101, name: "Margherita Pizza", category: "Main Course", price: 249, image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80" },
+  { id: 102, name: "Veg Burger", category: "Main Course", price: 149, image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" },
+  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=900&q=80" },
+  { id: 104, name: "French Fries", category: "Starters", price: 119, image: "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=900&q=80" },
+  { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" },
+  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: "https://images.unsplash.com/photo-1594631661960-61949463b356?auto=format&fit=crop&w=900&q=80" },
+  { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80" },
+  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "https://images.unsplash.com/photo-1631452180539-96aca7d48617?auto=format&fit=crop&w=900&q=80" }
 ];
 
 const cart = new Map();
@@ -51,6 +51,7 @@ const generateBillBtn = document.getElementById("generateBillBtn");
 const clearCartBtn = document.getElementById("clearCartBtn");
 const invoiceDialog = document.getElementById("invoiceDialog");
 const invoiceText = document.getElementById("invoiceText");
+const downloadShotBtn = document.getElementById("downloadShotBtn");
 const printBtn = document.getElementById("printBtn");
 const downloadPdfBtn = document.getElementById("downloadPdfBtn");
 const closeDialogBtn = document.getElementById("closeDialogBtn");
@@ -540,6 +541,30 @@ function downloadCurrentInvoicePdf() {
   showToast("Invoice PDF downloaded.", "success");
 }
 
+function downloadInvoiceScreenshot() {
+  if (!lastGeneratedInvoice || !lastGeneratedInvoice.text) {
+    showToast("Generate or open an invoice first.", "error");
+    return;
+  }
+  if (typeof html2canvas === "undefined") {
+    showToast("Screenshot library not loaded. Refresh and try again.", "error");
+    return;
+  }
+
+  html2canvas(invoiceDialog, {
+    backgroundColor: "#ffffff",
+    scale: 2
+  }).then((canvas) => {
+    const link = document.createElement("a");
+    link.download = `${lastGeneratedInvoice.billNo}-invoice.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+    showToast("Invoice screenshot saved.", "success");
+  }).catch(() => {
+    showToast("Could not capture screenshot.", "error");
+  });
+}
+
 generateBillBtn.addEventListener("click", () => {
   sanitizePaymentFields();
   renderTotals();
@@ -559,6 +584,7 @@ generateBillBtn.addEventListener("click", () => {
 
 printBtn.addEventListener("click", printCurrentInvoice);
 downloadPdfBtn.addEventListener("click", downloadCurrentInvoicePdf);
+downloadShotBtn.addEventListener("click", downloadInvoiceScreenshot);
 closeDialogBtn.addEventListener("click", () => invoiceDialog.close());
 clearCartBtn.addEventListener("click", () => {
   clearCart();

@@ -17,7 +17,10 @@
   <main class="app-shell">
     <header class="hero card reveal">
       <div>
-        <h1 id="restaurantBrand">Spice Garden Bistro</h1>
+        <div class="brand-head">
+          <img src="./assets/logo.svg" alt="BillMeUp Logo" class="brand-logo" />
+          <h1 id="restaurantBrand">Spice Garden Bistro</h1>
+        </div>
         <p class="sub">Premium Family Restaurant | BillMeUp POS</p>
         <p class="meta-line" id="restaurantMeta">
           24 MG Road, Indore | +91 98765 43210 | GSTIN: 23ABCDE1234F1Z5
@@ -124,6 +127,7 @@
     <div class="invoice-head">
       <h3>Invoice Preview</h3>
       <div class="invoice-actions">
+        <button id="downloadShotBtn" class="btn">Save Screenshot</button>
         <button id="downloadPdfBtn" class="btn">Download PDF</button>
         <button id="printBtn" class="btn">Print</button>
         <button id="closeDialogBtn" class="btn ghost">Close</button>
@@ -132,8 +136,13 @@
     <pre id="invoiceText"></pre>
   </dialog>
 
+  <footer class="page-footer">
+    <p>© 2026 BillMeUp | Restaurant Billing Platform</p>
+  </footer>
+
   <div id="toast" class="toast"></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="./script.js"></script>
 </body>
