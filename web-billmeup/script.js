@@ -18,22 +18,23 @@ const RESTAURANT = {
 const FALLBACK_IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/640px-No_image_available.svg.png";
 
 const MENU_ITEMS = [
-  { id: 101, name: "Margherita Pizza", category: "Main Course", price: 249, image: "https://source.unsplash.com/1200x700/?margherita,pizza" },
-  { id: 102, name: "Veg Burger", category: "Main Course", price: 149, image: "https://source.unsplash.com/1200x700/?veg,burger" },
-  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: "https://source.unsplash.com/1200x700/?paneer,tikka" },
-  { id: 104, name: "French Fries", category: "Starters", price: 119, image: "https://source.unsplash.com/1200x700/?french,fries" },
-  { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: "https://source.unsplash.com/1200x700/?cold,coffee" },
-  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: "https://source.unsplash.com/1200x700/?masala,chai" },
-  { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: "https://source.unsplash.com/1200x700/?chocolate,brownie" },
-  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "https://source.unsplash.com/1200x700/?gulab,jamun" },
-  { id: 109, name: "Mint Mojito", category: "Beverages", price: 129, image: "https://source.unsplash.com/1200x700/?mint,mojito" },
-  { id: 110, name: "Veg Momos", category: "Starters", price: 139, image: "https://source.unsplash.com/1200x700/?momos,dumplings" },
-  { id: 111, name: "Chicken Biryani", category: "Main Course", price: 289, image: "https://source.unsplash.com/1200x700/?chicken,biryani" },
-  { id: 112, name: "Tandoori Roti", category: "Main Course", price: 25, image: "https://source.unsplash.com/1200x700/?indian,bread" },
-  { id: 113, name: "Masala Papad", category: "Starters", price: 69, image: "https://source.unsplash.com/1200x700/?papad,snack" },
-  { id: 114, name: "Mango Lassi", category: "Beverages", price: 119, image: "https://source.unsplash.com/1200x700/?mango,lassi" },
-  { id: 115, name: "Ice Cream Sundae", category: "Desserts", price: 149, image: "https://source.unsplash.com/1200x700/?icecream,sundae" }
+  { id: 101, name: "Margherita Pizza", category: "Main Course", price: 249, image: "images/margherita-pizza.jpeg" },
+  { id: 102, name: "Veg Burger", category: "Main Course", price: 149, image: "images/veg-burger.jpeg" },
+  { id: 103, name: "Paneer Tikka", category: "Starters", price: 219, image: "images/paneer-tikka.jpeg" },
+  { id: 104, name: "French Fries", category: "Starters", price: 119, image: "images/french-fries.jpeg" },
+  { id: 105, name: "Cold Coffee", category: "Beverages", price: 99, image: "images/cold-coffee.jpeg" },
+  { id: 106, name: "Masala Chai", category: "Beverages", price: 49, image: "images/masala-chai.jpeg" },
+  { id: 107, name: "Chocolate Brownie", category: "Desserts", price: 129, image: "images/chocolate-cake.jpeg" },
+  { id: 108, name: "Gulab Jamun", category: "Desserts", price: 79, image: "images/gulab-jamun.jpeg" },
+  { id: 109, name: "Mint Mojito", category: "Beverages", price: 129, image: "images/mojito.jpeg" },
+  { id: 110, name: "Veg Momos", category: "Starters", price: 139, image: "images/veg-momo.jpeg" },
+  { id: 111, name: "Chicken Biryani", category: "Main Course", price: 289, image: "images/biryani.jpeg" },
+  { id: 112, name: "Tandoori Roti", category: "Main Course", price: 25, image: "images/tandoori-roti.jpeg" },
+  { id: 113, name: "Masala Papad", category: "Starters", price: 69, image: "images/masala-papad.jpeg" },
+  { id: 114, name: "Mango Lassi", category: "Beverages", price: 119, image: "images/mango-lassi.jpeg" },
+  { id: 115, name: "Ice Cream Sundae", category: "Desserts", price: 149, image: "images/ice-cream-sundae.jpeg" }
 ];
+
 
 const cart = new Map();
 let currentCategory = "All";
